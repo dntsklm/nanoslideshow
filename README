@@ -1,0 +1,86 @@
+About
+=====
+
+The nanoslideshow is a small HTML5 (HTML, CSS, JavaScript) program
+that loads images and creates a web-page slide show of them with low
+overhead and no third party dependencies.
+
+Files
+=====
+
+nanoslideshow.css	internal and external CSS styles
+nanoslideshow.js	JavaScript code
+
+Use
+===
+
+In order to create a slide show for a web-page, one does include style
+link to HTML HEAD and configuration variable and its configuration
+object and a script link to HTML BODY.
+
+Configuration
+=============
+
+Please read the source of index.html under test directory for an
+example how to insert and configure the slide show. Please feel free
+to experiment with the test.
+
+In the index.html file, the inserted code is between two HTML comment
+lines "nanoslideshow start/end". The property names of an object
+assigned to configuration variable are self-explanatory or,
+additionally, commented.
+
+Required properties are:
+ANIMATION_FPS		how many frames per second should be drawn on change
+ANIMATION_TIME		how long change of two slides should take
+AUTO_PLAY_INTERVAL	time between two slides (stops on user interaction)
+WIDTH			slide show view-port width
+HEIGHT			slide show view-port height
+SELECTORS_POSITION	corner to place slide change information and controls
+FIT_SMALLER		whether to fit smaller sized slide to view-port
+SLIDES			path-names to slide files to show
+
+Please note that CSS properties may be changed in nanoslideshow.css,
+in separate CSS, or in HTML of a web-page through STYLE element or as
+JavaScript object within the aforementioned configuration variable
+(example of the latter is given in test/index.html).
+
+Development
+===========
+
+The source code of the program is the development version: it loads
+lots of global identifiers, which are likely to conflict with any
+other identifiers present on a web-page, and it has JavaScript code
+that outputs various information to the web browser console.
+
+Production
+==========
+
+To prepare the production version of the program, one needs to remove
+everything between the two comment "//DEV//" (without double-quotes)
+lines (and including them).
+
+To do the removal conveniently, one may use Perl script at:
+https://github.com/dntsklm/remove_dev_pairs
+
+After removal of "//DEV//" lines, the JavaScript code is wrapped into
+a closure and the only global identifier added is the configuration
+one, which is unlikely to conflict with any other identifier present
+on a web-page.
+
+Web-browsers
+============
+
+Old web-browsers, especially proprietary IE8 and below, are not
+supported. Virtually everything else more modern than that
+web-browser, should work.
+
+Copyright
+=========
+
+Copyright © 2014 Donatas Klimašauskas
+
+License
+=======
+
+This program is free software. Its GPLv3+ license is at the COPYING file.

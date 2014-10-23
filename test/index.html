@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    nanoslideshow Test Web-page
+
+    nanoslideshow -- loads images and creates small web-page slide show
+    of them with low overhead and no third party dependencies
+
+    Copyright © 2014 Donatas Klimašauskas
+
+    This file is part of nanoslideshow.
+
+    nanoslideshow is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    nanoslideshow is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with nanoslideshow.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="../nanoslideshow.css">
+    <title>nanoslideshow Test Web-page</title>
+  </head>
+  <body>
+    <!-- nanoslideshow start -->
+    <div id="nanoslideshow">
+      <script type="text/javascript">
+	nanoslideshowconfiguration = {
+	  ANIMATION_FPS: 25,
+	  ANIMATION_TIME: .2, // seconds
+	  AUTO_PLAY_INTERVAL: 5, // seconds
+	  WIDTH: 640, // pixels
+	  HEIGHT: 360, // pixels
+	  SELECTORS_POSITION: 2, // 0: l/t, 1: r/t, 2: r/b, 3: l/b
+	  FIT_SMALLER: 0,
+	  SLIDES: [
+	    "png/1_640x360.png",
+	    "png/2_360x360.png",
+	    "png/3_640x640.png",
+	    "png/4_720x720.png",
+	    "png/5_320x180.png",
+	    "png/6_180x320.png",
+	    "png/7_640x360.png",
+	    "png/8_360x640.png",
+	    "png/9_1280x720.png",
+	    "png/10_720x1280.png",
+	  ],
+	  CSS: {
+	    nanoslideshow: {
+	      margin: "0 auto",
+	      backgroundColor: "#000",
+	      border: "3px solid #000",
+	      borderRadius: "5px",
+	    },
+	    nanoslideshowselectors: {
+	      padding: ".3em .7em",
+	      color: "#fff",
+	      backgroundColor: "#000",
+	      border: "1px solid #fff",
+	      borderRadius: "3px",
+	    },
+	  },
+	};
+      </script>
+      <script type="text/javascript" src="../nanoslideshow.js"></script>
+    </div>
+    <!-- nanoslideshow end -->
+  </body>
+</html>

@@ -1,0 +1,57 @@
+/*
+ * nanoslideshow -- loads images and creates small web-page slide show
+ * of them with low overhead and no third party dependencies
+ *
+ * Copyright © 2014 Donatas Klimašauskas
+ *
+ * This file is part of nanoslideshow.
+ *
+ * nanoslideshow is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * nanoslideshow is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with nanoslideshow.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Program depends on internal properties below -- they are not meant
+ * to be changed. External properties below are to be changed by user
+ * of program here, in separate CSS, or in HTML through STYLE element
+ * or as JavaScript object within configuration variable.
+ */
+
+/* nanoslideshow internal properties */
+#nanoslideshow {
+    overflow: hidden;
+}
+.nanoslideshowselectors {
+    float: left;
+    font-family: monospace;
+    font-weight: bold;
+}
+#nanoslideshowdisplay,
+.nanoslideshowselectors {
+    visibility: hidden;
+}
+#nanoslideshow,
+#nanoslideshowdisplay {
+    position: relative;
+}
+.nanoslideshowslides,
+#nanoslideshowselectorscontainer {
+    position: absolute;
+}
+/* nanoslideshow external properties */
+/*
+  #nanoslideshow {
+  }
+  .nanoslideshowselectors {
+  }
+  */
