@@ -221,8 +221,8 @@ function set_selectors()
     left.className = selectorsclass;
     right.className = selectorsclass;
     gauge.className = selectorsclass;
-    left.innerHTML = "&lt;";
-    right.innerHTML = "&gt;";
+    left.innerHTML = "◀";
+    right.innerHTML = "▶";
     gauge.innerHTML = "1";
     left.addEventListener("click", move_slide, false);
     right.addEventListener("click", move_slide, false);
