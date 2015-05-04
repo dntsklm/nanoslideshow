@@ -45,7 +45,7 @@ SLIDES			path-names to slide files to show
 Please note that CSS properties may be changed in nanoslideshow.css,
 in separate CSS, or in HTML of a web-page through STYLE element or as
 JavaScript object within the aforementioned configuration variable
-(example of the latter is given in test/index.html).
+(example of the latter two is given in test/index.html).
 
 Development
 ===========
