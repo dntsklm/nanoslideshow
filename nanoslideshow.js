@@ -2,7 +2,7 @@
 /*
  * nanoslideshow - small HTML5 slide show
  *
- * Copyright © 2014 Donatas Klimašauskas
+ * Copyright © 2014-2015 Donatas Klimašauskas
  *
  * This file is part of nanoslideshow.
  *
