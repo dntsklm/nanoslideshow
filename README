@@ -1,9 +1,11 @@
 About
 =====
 
-The nanoslideshow is a small HTML5 (HTML, CSS, JavaScript) program
-that loads images and creates a web-page slide show of them with low
-overhead and no third party dependencies.
+nanoslideshow - small HTML5 slide show
+
+The nanoslideshow is a HTML5 (HTML, CSS, JavaScript) program that
+loads images and creates a small slide show of them for a web-page
+with low overhead and no third party dependencies.
 
 Files
 =====
