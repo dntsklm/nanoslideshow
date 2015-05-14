@@ -39,6 +39,9 @@
 .nanoslideshowselectors {
     visibility: hidden;
 }
+#nanoslideshowgauge {
+    visibility: visible;
+}
 #nanoslideshow,
 #nanoslideshowdisplay {
     position: relative;

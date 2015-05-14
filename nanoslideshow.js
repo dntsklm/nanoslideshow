@@ -26,6 +26,7 @@ var nanoslideshowconfiguration;
 
 (function(){
 var NSSC = nanoslideshowconfiguration;
+var TOTAL = NSSC.SLIDES.length;
 var SLIDE_SHOW_NAME = "nanoslideshow";
 var SECOND = 1e3;
 var SLIDE_FULL = 100;
@@ -60,6 +61,11 @@ var forward;
 function id_(id)
 {
     return document.getElementById(id);
+}
+
+function ce_(el)
+{
+    return document.createElement(el);
 }
 
 // return denominator which produces no fraction for numerator division
@@ -109,14 +115,17 @@ function prepare_slides()
     if (slidesloaded > 1) {
 	timeidautoplay = setInterval(play_auto, AUTO_PLAY_INTERVAL);
 	right.style.visibility = "visible";
-	gauge.style.visibility = "visible";
+	gauge.innerHTML = "1";
+    } else {
+	gauge.style.visibility = "hidden";
     }
 }
 
 function handle_slide_loaded()
 {
     slidesloaded++;
-    if (slidesloaded === NSSC.SLIDES.length)
+    gauge.innerHTML = gauge.innerHTML.replace(/^\d+/, slidesloaded);
+    if (slidesloaded === TOTAL)
 	prepare_slides();
 }
 
@@ -183,9 +192,9 @@ function set_selectors()
 {
     var selectorsclass = SLIDE_SHOW_NAME + "selectors";
 
-    left = document.createElement("div");
-    right = document.createElement("div");
-    gauge = document.createElement("div");
+    left = ce_("div");
+    right = ce_("div");
+    gauge = ce_("div");
     left.id = SLIDE_SHOW_NAME + SIDE_LEFT;
     right.id = SLIDE_SHOW_NAME + SIDE_RIGHT;
     gauge.id = SLIDE_SHOW_NAME + "gauge";
@@ -194,7 +203,7 @@ function set_selectors()
     gauge.className = selectorsclass;
     left.innerHTML = "◀";
     right.innerHTML = "▶";
-    gauge.innerHTML = "1";
+    gauge.innerHTML = "0/" + TOTAL;
     left.addEventListener("click", move_slide, false);
     right.addEventListener("click", move_slide, false);
     left.addEventListener("click", stop_auto_play, false);
@@ -225,14 +234,13 @@ function load_slides_selectors()
     var slide;
     var slideid = SLIDE_SHOW_NAME + "slide";
     var slideclass = SLIDE_SHOW_NAME + "slides";
-    var len = NSSC.SLIDES.length;
-    var containerselectors = document.createElement("div");
+    var containerselectors = ce_("div");
     var containerdisplay = document.createDocumentFragment();
 
-    display = document.createElement("div");
+    display = ce_("div");
     display.id = SLIDE_SHOW_NAME + "display";
-    for (var i = 0; i < len; i++) {
-	slide = document.createElement("img");
+    for (var i = 0; i < TOTAL; i++) {
+	slide = ce_("img");
 	slide.id = slideid + i;
 	slide.className = slideclass;
 	slide.src = NSSC.SLIDES[i];
