@@ -2,7 +2,7 @@
 /*
  * nanoslideshow - small HTML5 slide show
  *
- * Copyright © 2014-2015 Donatas Klimašauskas
+ * Copyright © 2014-2016 Donatas Klimašauskas
  *
  * This file is part of nanoslideshow.
  *
@@ -100,6 +100,11 @@ function center_slide(slide, position)
     slide.style.top = (SLIDE_HEIGHT_CENTER - slide.height / 2) + "px";
 }
 
+function update_gauge(to)
+{
+    gauge.innerHTML = gauge.innerHTML.replace(/^\d+/, to);
+}
+
 function prepare_slides()
 {
     for (var i = 0; i < slidesloaded; i++) {
@@ -115,7 +120,7 @@ function prepare_slides()
     if (slidesloaded > 1) {
 	timeidautoplay = setInterval(play_auto, AUTO_PLAY_INTERVAL);
 	right.style.visibility = "visible";
-	gauge.innerHTML = "1";
+	update_gauge("1");
     } else {
 	gauge.style.visibility = "hidden";
     }
@@ -124,7 +129,7 @@ function prepare_slides()
 function handle_slide_loaded()
 {
     slidesloaded++;
-    gauge.innerHTML = gauge.innerHTML.replace(/^\d+/, slidesloaded);
+    update_gauge(slidesloaded);
     if (slidesloaded === TOTAL)
 	prepare_slides();
 }
@@ -166,7 +171,7 @@ function move_slide(event)
 	draw_frame();
     else
 	timeiddrawframe = setInterval(draw_frame, FRAME_INTERVAL);
-    gauge.innerHTML = slideinview;
+    update_gauge(slideinview);
 }
 
 function play_auto()
